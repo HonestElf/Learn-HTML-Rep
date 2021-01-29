@@ -1,0 +1,256 @@
+/* Задний фон */
+body {
+    background-color: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Основное окно - размер, посередине */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* Заголовок - черта, высота */
+.header {
+    border-bottom: 4px solid black;
+    height: 170px;
+}
+
+/* Заголовок - картинка - размер и отступы */
+.header img {
+    width: 150px;
+    margin-left:100px ;
+    margin-top: 10px;
+}
+
+/* Заголовок - меню - общее - обтекание, выравнивание, отступы*/
+.menu {
+    float: right;
+    text-align: center;
+    margin-right:15px;
+    margin-top: 20px;
+}    
+
+/* Заголовок  - элементы меню - отступы, обтекание, шрифт*/
+.menu ul li {
+    float: left;
+    width: 100px;
+    height: 40px;
+    margin-left: 50px;
+    font-style: italic;
+    font-size: 20px;
+    list-style-type: none;
+    color: #0616a8;
+}
+/* Выпадающее меню */
+.menu ul li ul li{
+    clear: both;
+    font-size: 0.85em;
+    width: 150px;
+    height: 20px;
+    list-style-type: square;
+    text-align: left;
+}
+
+/* Заголовок - наведение */
+.menu li a:hover {
+    color: #08c7e0;
+}
+
+/* Заголовок - посещенная ссылка */
+.menu li a:active {
+    color: red;
+}
+
+.menu ul li ul {
+    display: none;
+}
+.menu ul li:hover  ul{
+    display: block;
+    background-color: green;
+}
+
+/* Каталог - изображение - размер */
+.catalog a img{
+height: 300px;
+width: 300px;
+}
+
+/* Каталог - новый товар */
+.new::after{
+    content: "new!";
+    color: red;
+    font-size: 20px;
+}
+.main {
+    text-align: center;
+}
+
+/* Каталог ссылки - положение */
+.catalog a {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    height: 350px;
+    width: 350px;
+}
+
+/* Заголовки в товаре и контактах */
+.main h3 {
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;    
+    clear: both;
+    margin: 5px;
+}
+/* Товар - ссылка - картинка */
+.goodImage {
+    float: left;
+    border: 2px solid black;
+    margin-top: 20px;
+    }
+
+    .goodImage img{
+        width: 300px;
+    }
+/* Товар - описание рядом с фотографией */
+.goodDescription {
+    float:  right;
+    /* border: 2px solid black; */
+    width: 50%;
+ height: 300px;
+ line-height: 50px;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-family: cursive;
+}
+
+/* Товар - картинка - убирает рамку при наведении */
+.goodImage:hover{
+border-color: transparent;
+}
+
+/* Товар - кнопочки */
+.myButtons {
+    display: inline;
+    float: left;
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+ .myButtons input {
+     width: 150px;
+     height: 30px;
+
+     font-size: 1,5em;
+     font-weight: bold;
+ }
+ .myButtons input:hover {
+  background-color: gray;
+}
+
+.myButtons input:active {
+    font-style: italic;
+    background-color: honeydew;
+}
+
+/* Товар - краткое описание - шрифт */
+.short_desc {
+    color: #707070;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+/*Товар - подробное описание - шрифт */
+.large_desc {
+    color: #484343;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+/* Товар - список - иконки */
+.charList li {
+    list-style: none;
+    list-style-image: url("../images/smallPointer.jpg" );
+list-style-position: inside;
+}
+
+
+/* Товар - таблица */
+table {
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+/* Товар - таблица */
+td {
+    border: 1px solid black;
+}
+
+/* Товар - таблица - первая строка */
+table tr:first-of-type {
+    height: 20px;
+}
+
+/* Товар - описание - первая буква */
+.large_desc::first-letter, .short_desc::first-letter {
+font-size: 2em;
+font-family: cursive;
+}
+
+/* Контакты - поля */
+input[type="text"] {
+    width: 300px;
+    height: 20px;
+    font-style: italic;
+}
+
+/* Контакты - большое поле */
+textarea[name = "text"] {
+    width: 300px;
+    height: 40px;
+    font-style: italic;
+}
+
+/*Контакты - поля */
+#mail:focus {
+  background-color: #53545cd5;
+  color: white;
+}
+
+/* Контакты - поля */
+#mail {
+    text-transform: lowercase;
+}
+
+/* Контакты - поля */
+form input {
+    text-transform: capitalize;
+}
+
+/* Контакты - карта */
+iframe {
+   width: 100%;
+    height: 374px;
+}
+
+/* Нижняя часть */
+.footer {
+    border-top: 4px solid black;
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: right;
+    clear: both;
+   background-color:rgb(163, 154, 154);
+   color: white;
+}
