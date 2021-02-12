@@ -961,6 +961,146 @@ function recursivePrintNumbers(from, to) {
 }
 
 recursivePrintNumbers(5, 10);
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
 
+//Задание 36
+// С помощью свойства __proto__ задайте прототипы так,
+// чтобы поиск любого свойства выполнялся по следующему пути:
+//  pockets → bed → table → head. Например, pockets.pen должно
+//  возвращать значение 3 (найденное в table),
+//   а bed.glasses – значение 1 (найденное в head).
+//   Ответьте на вопрос: как быстрее получить значение
+//   glasses – через pockets.glasses или через head.glasses?
+//    При необходимости составьте цепочки поиска и сравните их.
+console.log("Задание 13.1 - Прототипное наследование");
+let head = {
+  glasses: 1,
+};
+
+let table = {
+  pen: 3,
+  __proto__: head,
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+  __proto__: table,
+};
+
+let pockets = {
+  money: 2000,
+  __proto__: bed,
+};
+
+console.log("pockets.pen: ", pockets.pen);
+console.log("bed.glasses: ", bed.glasses);
+
+//Задание 37
+// У нас есть два хомяка: шустрый (speedy) и ленивый (lazy);
+//  оба наследуют от общего объекта hamster.
+// Когда мы кормим одного хомяка, второй тоже наедается.
+//  Почему? Как это исправить?
+console.log("Задание 13.2 - Прототипное наследование");
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  },
+};
+
+let speedy = {
+  __proto__: hamster,
+};
+
+let lazy = {
+  __proto__: hamster,
+};
+
+// Этот хомяк нашёл еду
+speedy.eat("apple");
+speedy.eat("porato");
+lazy.eat("carrot");
+hamster.eat("onion");
+
+console.log("speedy: ", speedy.stomach); // apple
+
+// У этого хомяка тоже есть еда. Почему? Исправьте
+console.log("lazy: ", lazy.stomach); // apple
+console.log("hamster: ", hamster.stomach);
+
+//Задание 38
+// Добавьте всем функциям в прототип метод defer(ms),
+//  который вызывает функции через ms миллисекунд.
+// После этого должен работать такой код:
+console.log("Задание 13.3 - Прототипное наследование");
+Function.prototype.defer = function (ms) {
+  setTimeout(this, ms);
+};
+
+function f() {
+  console.log("Hello!");
+}
+
+f.defer(1000); // выведет "Hello!" через 1 секунду
+
+//Задание 39
+// Добавьте всем функциям в прототип метод defer(ms),
+// который возвращает обёртку, откладывающую вызов функции на ms миллисекунд.
+// Например, должно работать так:
+console.log("Задание 13.2 - Декораторы - повторить");
+Function.prototype.deferSec = function (ms) {
+  let f = this;
+  return function (...args) {
+    setTimeout(() => f.apply(this, args), ms);
+  };
+};
+
+function f(a, b) {
+  console.log(a + b);
+}
+f.deferSec(1000)(1, 2); // выведет 3 через 1 секунду.
+
+//Задание 40
+// Имеется объект dictionary, созданный с помощью Object.create(null)
+// для хранения любых пар ключ/значение.
+// Добавьте ему метод dictionary.toString(), который должен возвращать
+//  список ключей, разделённых запятой. Ваш toString не должен выводиться
+//  при итерации объекта с помощью цикла for..in.
+console.log("Задание 13.3 - Декораторы - повторить");
+
+let dictionary = Object.create(null, {
+  toString: {
+    value() {
+      return Object.keys(this).join();
+    },
+  },
+});
+// добавляем немного данных
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; // здесь __proto__ -- это обычный ключ
+
+// только apple и __proto__ выведены в цикле
+for (let key in dictionary) {
+  console.log(key); // "apple", затем "__proto__"
+}
+
+// ваш метод toString в действии
+console.log(dictionary); // "apple,__proto__"
+
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
+//Задание 35
+console.log("Задание 12.1 - Декораторы - повторить");
 //Задание 35
 console.log("Задание 12.1 - Декораторы - повторить");
