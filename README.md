@@ -1,2 +1,2 @@
 # LearningProjects
-Projects during learning of HTML, CSS, JS, etc.
+Learning HTML projects
